@@ -38,7 +38,12 @@ async function run() {
         res.send(result);
     })
 
-
+    app.post('/chocolate', async(req, res) => {
+      const newChocolate = req.body;
+      console.log(newChocolate);
+      const result = await chocolateCollection.insertOne(newChocolate);
+      res.send(result);
+    })
 
 
     // Send a ping to confirm a successful connection
